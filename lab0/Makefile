@@ -7,7 +7,7 @@ part1:
 .PHONY: part2
 part2:
 	make clean
-	verilator --build ./part2/alu.v --exe ./part2/testbench.cpp -cc --trace -Wall
+	verilator --build ./part2/alu.v ./part1/fullAdder.v ./part2/adder4Bit.v --top-module alu --exe ./part2/testbench.cpp -cc --trace -Wall
 	./obj_dir/Valu
 
 .PHONY: clean
